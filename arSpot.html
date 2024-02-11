@@ -1,0 +1,387 @@
+<a-scene
+  id="scene"
+  landing-page
+  xrextras-loading="
+    loadBackgroundColor: #545454;
+    cameraBackgroundColor: #545454;
+    loadImage: #title;
+    loadAnimation: none;"
+  xrextras-runtime-error
+  renderer="colorManagement: true"
+  Axrconfig="allowedDevices: any"
+  Axrweb="disableWorldTracking: true"
+  xrweb=""
+  marker="name: spot1"
+  touch
+  capture
+  piece="pieceVisible: true"
+  tutorial
+  to-map
+  spot1
+  effect 
+  ripples>
+  <a-assets>
+    <a-asset-item id="model_hand" src="../assets/hand.glb"></a-asset-item>
+    <a-asset-item id="model-right-door" src="../assets/huji/door_marumado.glb"></a-asset-item>
+    <a-asset-item id="model-left-door" src="../assets/huji/door_marumado.glb"></a-asset-item>
+
+    <a-asset-item id="model_cat_1" src="../assets/huji/cat_1.glb"></a-asset-item>
+    <a-asset-item id="model_cat_2" src="../assets/huji/cat_2.glb"></a-asset-item>
+    <a-asset-item id="model_cat_3" src="../assets/sintyoko_denkinomati_1-1_01.glb"></a-asset-item>
+
+    <a-asset-item id="esa_gu" src="../assets/esa_gu.glb"></a-asset-item>
+    <a-asset-item id="esa_utuwa" src="../assets/esa_utuwa.glb"></a-asset-item>
+
+    <a-asset-item id="heart" src="../assets/hato.glb"></a-asset-item>
+
+    <img id="huji" src="../assets/huji/adobeStock_huji2.jpg" />
+    <img id="huji_line" src="../assets/huji/Fuji.png" />
+    <img id="hanabira" src="../assets/huji/hanabira.png" />
+    <img id="rogo" src="../assets/nekomaneki_rogo_nekoari.png" />
+    <img id="title" src="../assets/title.jpg" />
+
+    <img id="body0img" src="../assets/Texture/body/0.jpg" />
+    <img id="body1img" src="../assets/Texture/body/1.jpg" />
+    <img id="body2img" src="../assets/Texture/body/2.jpg" />
+    <img id="body3img" src="../assets/Texture/body/3.jpg" />
+    <img id="body4img" src="../assets/Texture/body/4.jpg" />
+    <img id="body5img" src="../assets/Texture/body/5.jpg" />
+    <img id="face0img" src="../assets/Texture/face/0.jpg" />
+    <img id="face1img" src="../assets/Texture/face/1.jpg" />
+    <img id="face2img" src="../assets/Texture/face/2.jpg" />
+    <img id="face3img" src="../assets/Texture/face/3.jpg" />
+    <img id="face4img" src="../assets/Texture/face/4.jpg" />
+    <img id="face5img" src="../assets/Texture/face/5.jpg" />
+    <img id="hige0img" src="../assets/Texture/hige/0.png" />
+    <img id="hige1img" src="../assets/Texture/hige/1.png" />
+    <img id="hige2img" src="../assets/Texture/hige/2.png" />
+    <img id="hige3img" src="../assets/Texture/hige/3.png" />
+    <img id="hige4img" src="../assets/Texture/hige/4.png" />
+    <img id="hige5img" src="../assets/Texture/hige/5.png" />
+
+    <img id="ledImg" src="../assets/LEDlight_s.png" />
+    <img id="ringImg_i" src="../assets/ring_inner_s.png" />
+    <img id="ringImg_e" src="../assets/ring_outer2_s.png" />
+
+    <img id="model_hamon" src="../assets/wavering4.png" />
+  </a-assets>
+
+  <a-camera id="camera" position="0 1.4 0"></a-camera>
+
+  <a-entity
+    light="type: directional; color: #FFF; intensity: 2; shadowCameraVisible: false;
+                   castShadow: true; shadowMapWidth: 1024; shadowMapHeight: 1024"
+    position="1 1 0"></a-entity>
+  <!-- //spot　スポットライト、textureにも反映される　positionは何も設定していないと 0 0 0 変更点angle 40→90 -->
+  <a-entity light="type: spot; color: #FFF; angle: 90; intensity: 0.75" position="0 1 3"></a-entity>
+
+  <a-entity id="mark" position="-1 -8 0" rotation="-180 0 -90">
+    <!-- <a-entity
+      light="type: directional; color: #FFF; intensity: 2; shadowCameraVisible: false;
+                   castShadow: true; shadowMapWidth: 1024; shadowMapHeight: 1024"
+      position="1 1 0"></a-entity> -->
+    <!-- //spot　スポットライト、textureにも反映される　positionは何も設定していないと 0 0 0 変更点angle 40→90 -->
+    <!-- <a-entity
+      light="type: spot; color: #FFF; angle: 90; intensity: 0.75"
+      position="0 1 3"></a-entity> -->
+    <a-entity>
+      <a-curvedimage
+        position="0 1.07 -2"
+        height="3.141"
+        radius="2"
+        theta-start="45"
+        theta-length="270"
+        src="#huji"></a-curvedimage>
+      <a-entity position="0 2.5 -1.7" rotation="0 0 0">
+        <a-image
+          position="0 -1 0"
+          src="#huji_line"
+          opacity="0.9"
+          height="2"
+          width="0.037"></a-image>
+      </a-entity>
+
+      <a-entity position="-1 2.5 -2.5" rotation="0 0 0">
+        <a-image
+          position="0 -1 0"
+          src="#huji_line"
+          opacity="0.9"
+          height="2"
+          width="0.037"></a-image>
+      </a-entity>
+
+      <a-entity position="0.8 2.5 -2.5" rotation="0 0 0">
+        <a-image
+          position="0 -1 0"
+          src="#huji_line"
+          opacity="0.9"
+          height="2"
+          width="0.037"></a-image>
+      </a-entity>
+
+      <a-entity position="1.4 2.5 -2" rotation="0 0 0">
+        <a-image
+          position="0 -1 0"
+          src="#huji_line"
+          opacity="0.9"
+          height="2"
+          width="0.037"></a-image>
+      </a-entity>
+
+      <a-entity position="0.2 2.5 -0.5" rotation="0 0 0">
+        <a-image
+          position="0 -1 0"
+          src="#huji_line"
+          opacity="0.9"
+          height="2"
+          width="0.037"></a-image>
+      </a-entity>
+
+      <a-entity position="-0.4 2.5 -0.3" rotation="0 0 0">
+        <a-image
+          position="0 -1 0"
+          src="#huji_line"
+          opacity="0.9"
+          height="2"
+          width="0.037"></a-image>
+      </a-entity>
+
+      <a-entity position="-0.2 2.5 -3" rotation="0 0 0">
+        <a-image
+          position="0 -1 0"
+          src="#huji_line"
+          opacity="0.9"
+          height="2"
+          width="0.037"></a-image>
+      </a-entity>
+    </a-entity>
+
+    <a-entity id="lightPcont" position="0 0 0" lightp_controller="modeNum:1;"> </a-entity>
+    <a-entity
+      id="ledCont"
+      position="0 0 0"
+      led_controller="modeNum:2; duration:6000;
+LEDorigins:
+0.05 0.30 0.00, 0.05 -0.24 0.00, -0.06 -0.03 0.00, 0.09 -0.18 0.00, 0.02 0.47 0.00, -0.01 0.32 0.00, -0.08 -0.08 0.00, -0.10 -0.39 0.00, -0.07 0.26 0.00, 0.06 0.33 0.00, 0.08 0.26 0.00, -0.07 -0.33 0.00, -0.06 0.49 0.00, 0.10 0.14 0.00, -0.09 0.30 0.00, 0.02 0.17 0.00, 0.05 -0.31 0.00, -0.09 -0.47 0.00, 0.00 -0.06 0.00, -0.07 -0.14 0.00, -0.05 -0.09 0.00, -0.06 0.30 0.00, -0.05 0.04 0.00, -0.06 -0.37 0.00, 0.06 -0.32 0.00, 0.09 -0.21 0.00, 0.09 0.01 0.00, 0.06 0.19 0.00, -0.10 0.11 0.00, -0.09 -0.29 0.00, 0.07 0.39 0.00, -0.04 -0.15 0.00, -0.05 0.05 0.00, 0.04 -0.09 0.00, 0.03 -0.37 0.00, 0.04 0.48 0.00, 0.04 0.47 0.00, 0.08 0.43 0.00, 0.03 0.02 0.00, -0.08 -0.49 0.00, -0.09 -0.09 0.00, 0.05 -0.38 0.00, 0.08 -0.33 0.00, 0.04 0.17 0.00, 0.03 0.03 0.00, 0.09 0.33 0.00, -0.01 -0.33 0.00, -0.02 -0.28 0.00, -0.02 0.36 0.00, 0.03 0.30 0.00, 0.08 0.37 0.00, 0.08 -0.05 0.00, -0.03 0.09 0.00, -0.09 -0.34 0.00, 0.08 -0.26 0.00, 0.06 -0.34 0.00, 0.05 0.06 0.00;
+LEDpositions:
+-0.00 0.63 0.05, 0.21 0.59 0.05, 0.40 0.48 0.05, 0.54 0.31 0.05, 0.62 0.11 0.05, 0.62 -0.11 0.05, 0.54 -0.31 0.05, 0.40 -0.48 0.05, 0.21 -0.59 0.05, 0.00 -0.63 0.05, -0.21 -0.59 0.05, -0.40 -0.48 0.05, -0.54 -0.31 0.05, -0.62 -0.11 0.05, -0.62 0.11 0.05, -0.54 0.31 0.05, -0.40 0.48 0.05, -0.21 0.59 0.05, -0.00 0.63 0.05, -0.00 0.84 0.28, 0.29 0.79 0.28, 0.54 0.64 0.28, 0.73 0.42 0.28, 0.83 0.15 0.28, 0.83 -0.15 0.28, 0.73 -0.42 0.28, 0.54 -0.64 0.28, 0.29 -0.79 0.28, 0.00 -0.84 0.28, -0.29 -0.79 0.28, -0.54 -0.64 0.28, -0.73 -0.42 0.28, -0.83 -0.15 0.28, -0.83 0.15 0.28, -0.73 0.42 0.28, -0.54 0.64 0.28, -0.29 0.79 0.28, -0.00 0.84 0.28, -0.00 1.06 0.50, 0.36 0.99 0.50, 0.68 0.81 0.50, 0.92 0.53 0.50, 1.04 0.18 0.50, 1.04 -0.18 0.50, 0.92 -0.53 0.50, 0.68 -0.81 0.50, 0.36 -0.99 0.50, 0.00 -1.06 0.50, -0.36 -0.99 0.50, -0.68 -0.81 0.50, -0.92 -0.53 0.50, -1.04 -0.18 0.50, -1.04 0.18 0.50, -0.92 0.53 0.50, -0.68 0.81 0.50, -0.36 0.99 0.50, -0.00 1.06 0.50;
+LEDscales:
+0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.24, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.33, 0.42, 0.42, 0.42, 0.42, 0.42, 0.42, 0.42, 0.42, 0.42, 0.42, 0.42, 0.42, 0.42, 0.42, 0.42, 0.42, 0.42, 0.42, 0.42;
+">
+    </a-entity>
+    <!-- <a-entity light="type: ambient; color: #FFF; intensity: 1"></a-entity>
+    <a-entity
+      light="type: directional; color: #FFF; intensity: 0.7;
+                   castShadow: true;"
+      position="0 1 1"></a-entity>
+    <a-entity light="type: spot; color: #FFF; angle: 40;"></a-entity> -->
+
+    <a-ring
+      id="portal"
+      position="0 0 0"
+      radius-inner="0.5"
+      radius-outer="100"
+      xrextras-hider-material></a-ring>
+
+    <a-circle color="#1a0e23" radius="2" position="0 -0.5 -2" rotation="-90 0 0" shadow></a-circle>
+
+    <!-- <a-circle
+      color="#bfaffd"
+      radius="2"
+      position="0 -1.457854406 0.4"
+      rotation="-90 0 0"></a-circle> -->
+    <!-- 7952,2651 -->
+
+    <a-entity id="right-door" position="0.5 0 0">
+      <a-entity
+        position="-0.5 -0.5 -0.04"
+        gltf-model="#model-right-door"
+        scale="0.01 0.01 0.002"
+        shadow="receive: false">
+      </a-entity>
+    </a-entity>
+
+    <a-entity id="left-door" position="-0.5 0 0">
+      <a-entity
+        position="0.5 -0.5 -0.04"
+        rotation="0 180 0"
+        gltf-model="#model-left-door"
+        scale="0.01 0.01 0.002"
+        shadow="receive: false">
+      </a-entity>
+    </a-entity>
+
+    <a-entity
+      id="cat_1"
+      class="cats"
+      position="0.7 -0.5 -1.8"
+      rotation="0 80 0"
+      gltf-model="#model_cat_1"
+      animation-mixer="clip: Anim_53; loop: repeat"
+      scale="1.6 1.6 1.6"
+      texture="textureName: 5;"
+      shadow="receive: false">
+    </a-entity>
+
+    <a-entity
+      id="cat_2"
+      class="cats"
+      position="-0.7 -0.5 -1"
+      rotation="0 195 0"
+      gltf-model="#model_cat_2"
+      animation-mixer="clip: Anim_35; loop: repeat"
+      scale="1.6 1.6 1.6"
+      texture="textureName: 0;"
+      shadow="receive: false">
+    </a-entity>
+
+    <a-entity id="maneko_z" position="0 0 -2.4">
+      <a-entity id="maneko_x" position="-0.3 0 0">
+        <a-entity id="maneko_y" position="0 -0.5 0">
+          <a-entity
+            id="cat_3"
+            class="cats"
+            rotation="0 220 0"
+            gltf-model="#model_cat_3"
+            animation-mixer="clip: Anim_18; loop: repeat"
+            scale="3.5 3.5 3.5"
+            texture="textureName: 1;"
+            shadow="receive: false">
+          </a-entity>
+        </a-entity>
+      </a-entity>
+    </a-entity>
+
+    <a-entity id="esa_z" position="0 0 0">
+      <a-entity id="esa_x" position="0 0 0">
+        <a-entity id="esa_y" position="0 0 0">
+          <a-entity id="esa" scale="0.044 0.044 0.044" visible="false">
+            <a-entity
+              id="neko_esa_gu"
+              position="0 0 0"
+              gltf-model="#esa_gu"
+              scale="1 1 1"
+              shadow="receive: false">
+            </a-entity>
+            <a-entity
+              position="0 0 0"
+              gltf-model="#esa_utuwa"
+              scale="1 1 1"
+              shadow="receive: false">
+            </a-entity>
+          </a-entity>
+        </a-entity>
+      </a-entity>
+    </a-entity>
+
+    <a-entity
+      particle_controller="
+      ParticleAreaPos: 0 3.7 -2;
+      ParticleAreaRad: 1.8;
+      ParticleNum: 30;
+      ParticleScale: 0.05;
+      ParticleFlow: -0.5;
+      ParticleImage: #hanabira;
+      "></a-entity>
+
+    <a-entity id="flow"></a-entity>
+
+    <a-entity id="heart_parent" visible="false">
+      <a-entity id="heart_b_z" position="0 0 0">
+        <a-entity id="heart_b_x" position="0 0 0">
+          <a-entity id="heart_b_y" position="0 0 0">
+            <a-entity
+              id="heart_b"
+              position="0 0 0"
+              rotation="0 0 -20"
+              gltf-model="#heart"
+              scale="0 0 0"
+              shadow="receive: false">
+            </a-entity>
+          </a-entity>
+        </a-entity>
+      </a-entity>
+
+      <a-entity id="heart_d_z" position="0 0 0">
+        <a-entity id="heart_d_x" position="0 0 0">
+          <a-entity id="heart_d_y" position="0 0 0">
+            <a-entity
+              id="heart_d"
+              position="0 0 0"
+              rotation="0 0 20"
+              gltf-model="#heart"
+              scale="0 0 0"
+              shadow="receive: false">
+            </a-entity>
+          </a-entity>
+        </a-entity>
+      </a-entity>
+    </a-entity>
+
+    <a-entity id="hand_z" position="0 0 0">
+      <a-entity id="hand_x" position="0 0 0">
+        <a-entity id="hand_y" position="0 0 0">
+          <a-entity
+            hand
+            id="hand"
+            position="0 0 0"
+            rotation="0 180 0"
+            gltf-model="#model_hand"
+            animation-mixer="clip: 00; loop: repeat"
+            scale="2.2 2.2 2.2"
+            shadow="receive: false"
+            visible="false">
+          </a-entity>
+        </a-entity>
+      </a-entity>
+    </a-entity>
+
+    <a-entity position="0 -0.2 -0.01">
+      <a-image
+        id="hamon1"
+        src="#model_hamon"
+        position="0 0 -0.02"
+        opacity="0"
+        height="0"
+        width="0"
+        visible="false"></a-image>
+      <a-image
+        id="hamon2"
+        src="#model_hamon"
+        position="0 0 -0.01"
+        opacity="0"
+        height="0"
+        width="0"
+        visible="false"></a-image>
+      <a-image
+        id="hamon3"
+        src="#model_hamon"
+        position="0 0 0"
+        opacity="0"
+        height="0"
+        width="0"
+        visible="false"></a-image>
+    </a-entity>
+    
+    <a-plane
+      id="ground"
+      position="0 -2.57 0"
+      rotation="-90 0 0"
+      width="50"
+      height="50"
+      material="shader: shadow; depthWrite: false;"
+      shadow="receive: true">
+    </a-plane>
+  </a-entity>
+
+  <a-entity
+    hand
+    id="camera_hand"
+    position="0 0 0"
+    rotation="0 180 0"
+    gltf-model="#model_hand"
+    animation-mixer="clip: 00; loop: repeat"
+    scale="1 1 1"
+    shadow="cast: false; receive: false">
+  </a-entity>
+</a-scene>
